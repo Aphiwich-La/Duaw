@@ -1,0 +1,299 @@
+body {
+    background-color: #ffe4e1;
+    background: linear-gradient(to bottom right, #ffebee, #f8bbd0); /* ใช้ gradient */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 90vw; /* ความกว้างสูงสุด 90% */
+    margin: 20px auto; /* ระยะห่างจากขอบ */
+    padding: 30px; /* ระยะห่างภายใน */
+    background-color: rgba(255, 182, 193, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive; /* ใช้ฟอนต์ที่น่ารัก */
+    font-size: 28px;
+    color: #d5006d;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 20px;
+    color: #ff69b4;
+    background-color: rgba(255, 228, 225, 0.9);
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 2px solid #ff1493;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+    transition: background-color 0.3s;
+}
+
+.container p:hover {
+    background-color: rgba(255, 182, 193, 1);
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    background: linear-gradient(to right, #ff7e7e, #ff1493); /* Gradient บนปุ่ม */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1); /* ขยายปุ่มเมื่อ hover */
+    background: linear-gradient(to right, #ff1493, #ff69b4);
+    animation: pulse 0.5s infinite; /* เพิ่มอนิเมชัน pulse */
+}
+
+.hidden {
+    display: none;
+    pointer-events: none; /* ไม่ให้หัวใจตอบสนองต่อการคลิก */
+}
+
+.heart {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: auto; /* ให้หัวใจตอบสนองเมื่อมันแสดง */
+}
+
+.heart.show {
+    opacity: 1;
+    animation: float 1s ease forwards;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50px);
+    }
+}
+
+/* อนิเมชัน pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* อนิเมชัน fade-in สำหรับข้อความเซอร์ไพรส์ */
+#surpriseMessage {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#surpriseMessage.show {
+    opacity: 1; /* แสดงเมื่อเพิ่ม class */
+}
+
+.card {
+    width: 100%; /* เปลี่ยนเป็น 100% เพื่อให้เต็มพื้นที่ */
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card-header {
+    font-size: 20px;
+    color: #ff69b4;
+    background-color: rgba(255, 228, 225, 0.9);
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 2px solid #ff1493;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+    transition: background-color 0.3s;
+}
+
+.card-body {
+    padding: 10px;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.7s ease;
+    width: 100%; 
+    max-height: 800px; /* กำหนดความสูงสูงสุดสำหรับ Container */
+    
+}
+
+.carousel-img {
+    min-width: 100%; /* ปรับให้เต็มที่ */
+    max-height: 800px; /* กำหนดความสูงสูงสุด */
+    object-fit: cover; /* ทำให้ภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dot.active {
+    opacity: 1;
+    background-color: #000;
+}
+
+.image-gallery {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 228, 225, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-gallery h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #d5006d;
+    margin-bottom: 20px;
+}
+
+.image-item {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+}
+
+.image-item img {
+    width: 200px; /* กำหนดความกว้าง */
+    height: auto; /* ให้ความสูงปรับอัตโนมัติ */
+    border-radius: 15px; /* เพิ่มความมน */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    object-fit: cover; /* ทำให้ภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* ทำให้ปุ่มควบคุมอยู่ในตำแหน่งที่กำหนด */
+    bottom: 0; /* วางที่ด้านล่างสุด */
+    left: 50%; /* วางตรงกลาง */
+    transform: translateX(-50%); /* ปรับให้กลางแนวนอน */
+    background-color: rgba(255, 228, 225, 0.9); /* พื้นหลัง */
+    padding: 10px; /* ระยะห่างภายใน */
+    border-radius: 10px; /* มุมมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* เงา */
+}
+
+.music-controls button {
+    background-color: #ff69b4; /* สีพื้นหลัง */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.music-controls button:hover {
+    background-color: #ff1493; /* สีเมื่อ hover */
+    transform: scale(1.1); /* ขยายเมื่อ hover */
+}
+
+.music-controls input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px; /* กำหนดความกว้าง */
+    margin: 0 10px;
+}
+
+.music-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #ff69b4; /* สีของปุ่ม */
+    border-radius: 50%; /* ทำให้ปุ่มกลม */
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.music-controls input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* สีของแทร็ก */
+    height: 5px;
+    border-radius: 5px;
+}

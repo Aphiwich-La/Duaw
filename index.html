@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เซอร์ไพรส์วันเกิดแฟน</title>
+    <link rel="stylesheet" href="styles.css"> <!-- เชื่อมต่อไฟล์ CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>สุขสันต์วันเกิดนะที่รัก ขอบคุณทุกๆ สิ่งทุกๆ อย่างที่ทำให้กันตลอดมานะ ขอให้มีความสุขมากๆ รักนะ</h1> <!-- หัวข้อหลัก -->
+        <p>ขอบคุณที่เป็นเสียงหัวเราะ เป็นรอยยิ้ม เป็นความสุขให้กันในทุกๆ วัน</p>
+        <button id="surpriseButton">กดปุ่มนี้เพื่อรับความรัก อิอิ</button> <!-- ปุ่มสำหรับเปิดเซอร์ไพรส์ -->
+        <div id="surpriseMessage" class="hidden">
+            <p>🎉ตั้งแต่วันที่เราเจอกัน ชีวิตของฉันเปลี่ยนไปในทางที่สวยงามที่สุด เพราะเธอคือความรักที่ฉันค้นหามาตลอด 🎂</p>
+
+            <div class="card">
+                <div class="card-header">
+                  <h4>Happy Birthday to the love of my life! Every moment with you is a treasure, and I’m so grateful to have you by my side💑❤️</h4>
+                </div>
+                <div class="card-body">
+            
+                  <div class="carousel-container">
+                    <div class="carousel">
+                      <!-- Carousel Images -->
+                      <div class="carousel-images">
+                        <img src="/ims/duesamed.jpg" alt="Slide 1" class="carousel-img">
+                        <img src="/ims/narasuan.jpg" alt="Slide 2" class="carousel-img">
+                        <img src="/ims/pattaya.jpg" alt="Slide 3" class="carousel-img">
+                        <img src="/ims/rachaphat.jpg" alt="Slide 4" class="carousel-img">
+                        <img src="/ims/sukhothai.jpg" alt="Slide 5" class="carousel-img">
+                        <img src="/ims/1.jpg" alt="Slide 6" class="carousel-img">
+                        <img src="/ims/2.jpg" alt="Slide 7" class="carousel-img">
+                        <img src="/ims/3.jpg" alt="Slide 8" class="carousel-img">
+                        <img src="/ims/4.jpg" alt="Slide 9" class="carousel-img">
+                        <img src="/ims/5.jpg" alt="Slide 10" class="carousel-img">
+                        <img src="/ims/6.jpg" alt="Slide 11" class="carousel-img">
+                        <img src="/ims/7.jpg" alt="Slide 12" class="carousel-img">
+                        <img src="/ims/8.jpg" alt="Slide 13" class="carousel-img">
+                        <img src="/ims/9.jpg" alt="Slide 14" class="carousel-img">
+
+                      </div>
+                      <!-- Navigation buttons -->
+                      <button class="nav-btn prev-btn">⮜</button>
+                      <button class="nav-btn next-btn">⮞</button>
+                      <!-- Dots for navigation -->
+                      <div class="dots-container">
+                        <div class="dot" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                        <div class="dot" data-index="3"></div>
+                        <div class="dot" data-index="4"></div>
+                        <div class="dot" data-index="5"></div>
+                        <div class="dot" data-index="6"></div>
+                        <div class="dot" data-index="7"></div>
+                        <div class="dot" data-index="8"></div>
+                        <div class="dot" data-index="9"></div>
+                        <div class="dot" data-index="10"></div>
+                        <div class="dot" data-index="11"></div>
+                        <div class="dot" data-index="12"></div>
+                        <div class="dot" data-index="13"></div>
+                        <div class="dot" data-index="14"></div>
+
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            
+        
+        
+        </div> <!-- ข้อความเซอร์ไพรส์ -->
+        <div class="heart" id="heart">❤️</div> <!-- เพิ่มองค์ประกอบหัวใจ -->
+
+    </div>
+    <div class="image-gallery">
+      <h2>รูปที่รักกกกกก</h2>
+      <div class="image-item">
+          <img src="/ims/dew.jpg" alt="Love Image 1">
+      </div>
+      <div class="image-item">
+          <img src="/ims/dew1.jpg" alt="Love Image 2">
+      </div>
+      <div class="image-item">
+          <img src="/ims/dew2.jpg" alt="Love Image 3">
+      </div>
+      <div class="image-item">
+        <img src="/ims/dew3.jpg" alt="Love Image 4">
+    </div>
+  </div>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="/music/จากนไปจนนรนดร์.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+<div class="music-controls">
+    <button id="playPauseButton">⏵️</button>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+</div>
+
+  
+    <script src="script.js"></script> <!-- เชื่อมต่อไฟล์ JavaScript -->
+</body>
+</html>
